@@ -45,6 +45,14 @@ drive isn't usable yet.
 1. **Copy the script to a USB stick or external drive**, not the live session's home folder. The
    live session is erased on reboot, and the script saves its backup next to itself by default.
    The script refuses to save a backup to a location that won't survive a reboot.
+   To download it straight onto a mounted USB stick:
+
+   ```
+   cd /media/$USER/<usb-stick>
+   wget https://raw.githubusercontent.com/Atams777/pt715-51-sata-ahci/main/set-sata-ahci.py
+   ```
+
+   Run the remaining steps from that folder.
 
 2. **Dry run** (changes nothing):
 
@@ -119,4 +127,4 @@ It's the only SATA mode setting in the image. Acer's visible "SATA Mode" item is
 
 **Tested on one laptop** (PT715-51, BIOS V1.10, single 512 GB LITEON SSD), where it worked: the
 internal SSD appeared as `nvme0n1` after one reboot. The two-SSD RAID 0 setup hasn't been tested.
-Use at your own risk.
+Use at your own risk. Released under the MIT License (see `LICENSE`).
